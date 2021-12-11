@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.lang.Exception
 
 class ConfigUser : AppCompatActivity() {
     lateinit var usuario : User
@@ -23,7 +25,7 @@ class ConfigUser : AppCompatActivity() {
 
 
         //Setup
-        setup()
+        setup(email, username)
 
 
 
@@ -36,14 +38,29 @@ class ConfigUser : AppCompatActivity() {
 
     }
 
-    private fun setup(){
+    private fun setup(email : String, username : EditText){
+
+        db.collection("users").document(email).get().addOnSuccessListener {
+            username.setText(it.get("username") as String?)
+        }
 
     }
 
     private fun saveUser(email: String, name: String){
-        db.collection("users").document(email).set(
-            hashMapOf("username" to name)
-        )
+
+        try {
+            db.collection("users").document(email).set(
+                hashMapOf("username" to name)
+            )
+
+            var toast = Toast.makeText(this,"Username registrado satisfactoriamente",Toast.LENGTH_LONG)
+            toast.show()
+        }catch (e : Exception){
+            var toast = Toast.makeText(this,"Username no se ha podido registrar",Toast.LENGTH_LONG)
+            toast.show()
+        }
+
+
     }
 
     /*private fun saveUser(user : User){
