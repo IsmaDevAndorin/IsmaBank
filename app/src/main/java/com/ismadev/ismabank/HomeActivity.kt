@@ -1,10 +1,12 @@
 package com.ismadev.ismabank
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
@@ -19,10 +21,30 @@ class HomeActivity : AppCompatActivity() {
         // Setup
         val bundle = intent.extras
         val email = bundle?.getString("email")
-
         setup()
 
+        //Menu Buttons
+
+
+
+        var saldoBoton = findViewById<Button>(R.id.saldoButton).setOnClickListener{
+            val optionIntent = Intent(this, SaldoCuenta::class.java).apply {
+                putExtra("email", email)
+            }
+
+            startActivity(optionIntent)
+
+
+        }
+
+
+
+
+
+
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.principal_menu,menu)
@@ -40,9 +62,11 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
+
     private fun setup(){
 
         title = "Inicio"
+
 
     }
 

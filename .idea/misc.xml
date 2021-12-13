@@ -6,8 +6,9 @@
         <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_config_user.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.13728470111448834" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.13044579533941236" />
+        <entry key="app/src/main/res/layout/activity_saldo_cuenta.xml" value="0.13728470111448834" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.13728470111448834" />
         <entry key="app/src/main/res/layout/splash_screen.xml" value="0.13677811550151975" />
         <entry key="app/src/main/res/menu/principal_menu.xml" value="0.335" />
