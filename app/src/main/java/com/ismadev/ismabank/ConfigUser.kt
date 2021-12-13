@@ -1,5 +1,6 @@
 package com.ismadev.ismabank
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -26,11 +27,16 @@ class ConfigUser : AppCompatActivity() {
 
         //Setup
         setup(email, username)
+        var saldo : String = "0"
+        db.collection("users").document(email).get().addOnSuccessListener {
+           saldo  = (it.get("saldoEnCuenta") as String)
+
+        }
 
 
 
         saveUserButton.setOnClickListener {
-            saveUser(email.toString(),username.text.toString())
+            saveUser(email.toString(),username.text.toString(), saldo)
 
         }
 
@@ -46,11 +52,11 @@ class ConfigUser : AppCompatActivity() {
 
     }
 
-    private fun saveUser(email: String, name: String){
+    private fun saveUser(email: String, name: String, saldo : String){
 
         try {
             db.collection("users").document(email).set(
-                hashMapOf("username" to name)
+                hashMapOf("username" to name, "saldoEnCuenta" to saldo)
             )
 
             var toast = Toast.makeText(this,"Username registrado satisfactoriamente",Toast.LENGTH_LONG)
