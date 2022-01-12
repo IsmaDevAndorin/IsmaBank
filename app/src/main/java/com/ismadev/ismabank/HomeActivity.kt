@@ -37,7 +37,13 @@ class HomeActivity : AppCompatActivity() {
 
         }
 
+        var citasButton = findViewById<Button>(R.id.CitaButton).setOnClickListener {
+            val optionIntent = Intent(this, MisCitas::class.java).apply {
+                putExtra("email", email)
+            }
 
+            startActivity(optionIntent)
+        }
 
 
 

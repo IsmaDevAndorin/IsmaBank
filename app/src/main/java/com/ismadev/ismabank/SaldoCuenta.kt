@@ -54,9 +54,11 @@ class SaldoCuenta : AppCompatActivity() {
         details.add("Operacion 1")
         details.add("Operacion 2")
         details.add("Operacion 3")
+        details.add("Operacion 4")
+        details.add("Operacion 5")
 
         val adapter: ArrayAdapter<String> =
-            ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, details)
+            ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, details)
 
         listaDetalleSaldo.setAdapter(adapter);
     }

@@ -8,6 +8,8 @@
         <entry key="app/src/main/res/layout/activity_config_user.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.13044579533941236" />
+        <entry key="app/src/main/res/layout/activity_mis_citas.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_pedir_cita.xml" value="0.26268115942028986" />
         <entry key="app/src/main/res/layout/activity_saldo_cuenta.xml" value="0.13728470111448834" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.13728470111448834" />
         <entry key="app/src/main/res/layout/splash_screen.xml" value="0.13677811550151975" />

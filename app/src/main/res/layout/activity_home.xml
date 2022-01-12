@@ -10,12 +10,27 @@
 
 
 
+<LinearLayout
+    android:gravity="top|center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
 
     <Button
         android:id="@+id/saldoButton"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginRight="10dp"
         android:text="Saldo Cuenta"/>
+
+    <Button
+        android:id="@+id/CitaButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="Mis citas"/>
+
+
+</LinearLayout>
 
 
 
